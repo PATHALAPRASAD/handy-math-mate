@@ -1,5 +1,5 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { Stack, Tab, Typography } from "@mui/material";
+import { Stack, Tab } from "@mui/material";
 import React, { useState } from "react";
 import { Tables } from "./Tables";
 import { Powers } from "./Powers";
