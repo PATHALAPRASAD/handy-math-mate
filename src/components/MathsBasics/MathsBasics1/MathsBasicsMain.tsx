@@ -50,33 +50,10 @@ export const MathsBasics1Main = () => {
           indicatorColor="secondary"
           scrollButtons="auto"
         >
-          {/* <Tab label={"Maths Tables"} value={"1"} sx={{ color: "yellow" }} />
-          <Tab label={"Powers"} value={"2"} sx={{ color: "yellow" }} />
-          <Tab label={"Prime Numbers"} value={"3"} sx={{ color: "yellow" }} />
-          <Tab label={"Maths Tables"} value={"4"} sx={{ color: "yellow" }} /> */}
-
           {tabsData.map((tab: any, tabIndex: number) => (
-            <Tab
-              key={tabIndex}
-              value={tab.value}
-              label={tab.label}
-              // sx={{ color: "yellow" }}
-            />
+            <Tab key={tabIndex} value={tab.value} label={tab.label} />
           ))}
         </TabList>
-
-        {/* <TabPanel value={"1"}>
-          <Tables />
-        </TabPanel>
-        <TabPanel value={"2"}>
-          <Powers />
-        </TabPanel>
-        <TabPanel value={"3"}>
-          <PrimeNumbers />
-        </TabPanel>
-        <TabPanel value={"4"}>
-          <Tables />
-        </TabPanel> */}
 
         {tabsData.map((tab: any, tabIndex: number) => (
           <TabPanel key={tabIndex} value={tab.value}>
