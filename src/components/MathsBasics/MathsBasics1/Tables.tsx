@@ -60,7 +60,7 @@ export const Tables = () => {
         <Button variant="contained" onClick={handleSearch}>
           Search
         </Button>
-        <Button variant="outlined" onClick={handleReset}>
+        <Button variant="contained" onClick={handleReset}>
           Reset
         </Button>
       </Stack>
