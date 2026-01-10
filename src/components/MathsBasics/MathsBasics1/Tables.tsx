@@ -51,7 +51,8 @@ export const Tables = () => {
           p: 5,
         }}
       >
-        <Typography variant="body1">Enter which table you want ?</Typography>
+        {/* <Typography variant="body1">Enter which table you want ?</Typography> */}
+        <Typography variant="body1">Enter number ?</Typography>
         <TextField
           value={value}
           onChange={handleChange}
