@@ -1,5 +1,5 @@
 import "./App.css";
-import { MathsBasics1Main } from "./components/MathsBasics/MathsBasics1/MathsBasicsMain";
+import { MathsBasics1Main } from "./components/MathsBasicsMain";
 
 function App() {
   return (

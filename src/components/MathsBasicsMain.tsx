@@ -21,6 +21,11 @@ const tabsData: any[] = [
     label: "Prime Numbers",
     component: <PrimeNumbers />,
   },
+  {
+    value: "3",
+    label: "Prime Numbers",
+    component: <PrimeNumbers />,
+  },
 ];
 
 export const MathsBasics1Main = () => {
@@ -28,7 +33,7 @@ export const MathsBasics1Main = () => {
 
   const handleMainTabsChange = (
     event: React.SyntheticEvent,
-    newValue: string
+    newValue: string,
   ) => {
     setMainTabValue(newValue);
   };

@@ -2,11 +2,12 @@ import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 let initialInputData: any = {
-  first: "",
-  last: "",
+  baseStart: "",
+  baseEnd: "",
+  exponent: "",
 };
 
-export const PrimeNumbers = () => {
+export const Powers = () => {
   const [inputData, setInputData] = useState<any>(initialInputData);
   const [isDisplay, setIsDisplay] = useState<boolean>(false);
 
@@ -20,27 +21,15 @@ export const PrimeNumbers = () => {
     const numRegExp: any = /^[0-9]+$/;
     setIsDisplay(
       inputData &&
-        numRegExp.test(inputData.first) &&
-        numRegExp.test(inputData.last)
+        numRegExp.test(inputData.baseStart) &&
+        numRegExp.test(inputData.baseEnd) &&
+        numRegExp.test(inputData.exponent),
     );
   };
   const handleReset = () => {
     setInputData(initialInputData);
     setIsDisplay(false);
   };
-
-  const isPrime = (n: number) => {
-    if (n < 2) {
-      return false;
-    }
-    for (let i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  };
-
   return (
     <Stack
       spacing={2}
@@ -66,18 +55,25 @@ export const PrimeNumbers = () => {
         }}
       >
         <TextField
-          value={inputData.first}
+          value={inputData.baseStart}
           onChange={handleInputChange}
           sx={{ bgcolor: "white" }}
-          label={"First"}
-          name={"first"}
+          label={"Start"}
+          name={"baseStart"}
         />
         <TextField
-          value={inputData.last}
+          value={inputData.baseEnd}
           onChange={handleInputChange}
           sx={{ bgcolor: "white" }}
-          label={"Last"}
-          name={"last"}
+          label={"End"}
+          name={"baseEnd"}
+        />
+        <TextField
+          value={inputData.exponent}
+          onChange={handleInputChange}
+          sx={{ bgcolor: "white" }}
+          label={"Exponent"}
+          name={"exponent"}
         />
         <Button variant="contained" onClick={handleSubmit}>
           Submit
@@ -86,21 +82,26 @@ export const PrimeNumbers = () => {
           Reset
         </Button>
       </Stack>
-      {inputData && inputData.first && inputData.last && isDisplay && (
+      {inputData && inputData.baseStart && inputData.baseEnd && isDisplay && (
         <Stack
           spacing={2}
           direction={"column"}
           sx={{ bgcolor: "lightgreen", p: 5 }}
         >
-          {new Array(parseInt(inputData.last) - parseInt(inputData.first) + 1)
+          {new Array(
+            parseInt(inputData.baseEnd) - parseInt(inputData.baseStart) + 1,
+          )
             .fill(0)
-            .map((x: any, xIndex: number) =>
-              isPrime(parseInt(inputData.first) + xIndex) ? (
-                <Typography key={xIndex}>
-                  {parseInt(inputData.first) + xIndex}
-                </Typography>
-              ) : null
-            )}
+            .map((x: any, xIndex: number) => (
+              <Typography key={xIndex}>
+                {parseInt(inputData.baseStart) + xIndex}{" "}
+                <sup>{inputData.exponent}</sup> ={" "}
+                {Math.pow(
+                  parseInt(inputData.baseStart) + xIndex,
+                  parseInt(inputData.exponent),
+                )}
+              </Typography>
+            ))}
         </Stack>
       )}
     </Stack>
