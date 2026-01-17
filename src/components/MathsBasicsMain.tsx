@@ -23,7 +23,7 @@ const tabsData: any[] = [
   },
   {
     value: "4",
-    label: "Prime Numbers",
+    label: "Prime Numbers - 2",
     component: <PrimeNumbers />,
   },
 ];
