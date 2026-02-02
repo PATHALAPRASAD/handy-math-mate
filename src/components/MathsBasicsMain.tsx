@@ -21,11 +21,11 @@ const tabsData: any[] = [
     label: "Prime Numbers",
     component: <PrimeNumbers />,
   },
-  {
-    value: "4",
-    label: "Prime Numbers - 2",
-    component: <PrimeNumbers />,
-  },
+  // {
+  //   value: "4",
+  //   label: "Prime Numbers - 2",
+  //   component: <PrimeNumbers />,
+  // },
 ];
 
 export const MathsBasics1Main = () => {
